@@ -37,10 +37,12 @@ public class Main {
         try {
             is = new FileInputStream(source);
             os = new FileOutputStream(dest);
-            byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[100];
             int length;
-            while ((length = is.read(buffer))>-1)
-            os.write(buffer,0,length);
+            while ((length = is.read(buffer)) > 0) {
+                System.out.println(length);
+                os.write(buffer, 0, length);
+            }
         } finally {
             is.close();
             os.close();
