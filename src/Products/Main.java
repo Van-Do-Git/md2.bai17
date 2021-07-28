@@ -46,6 +46,8 @@ public class Main {
         FileInputStream fis = new FileInputStream("listproduct");
         ObjectInputStream obj = new ObjectInputStream(fis);
         productList = (List<Productt>) obj.readObject();
+        fis.close();
+        obj.close();
         return productList;
     }
 }
